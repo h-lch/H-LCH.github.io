@@ -1,0 +1,22 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style:none;
+}
+a{
+	text-decoration:none;
+	color: #666;
+}
+a:hover {
+	color: #e5004f;
+}
+div{
+	display: block;
+}
+body {
+	font: normal 12px/1.5 Verdana,simsun,Sans-Serif;
+}
+html {
+	color: #666;
+	background-color: #fff;
+}

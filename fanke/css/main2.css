@@ -1,0 +1,257 @@
+.header{
+	width: 100%;
+	height: 32px;
+	border-bottom: 1px solid #ccc;
+	background: #f7f7f7;
+}
+.nk{
+	width: 1200px;
+	margin:0 auto;
+	/*background: red;*/
+}
+.login{
+	width: 435px;
+	height: 32px;
+	float:right;
+}
+.welcome{
+	width: 144px;
+	font-size: 12px;
+	line-height: 32px;
+	color: #808080;
+	height: 32px;
+	float:left;
+}
+.dlzc{
+	width: 77px;
+	height: 32px;
+	float:left;
+	margin-left: 20px;
+}
+.dl{
+	font-size: 12px;
+	color: #808080;
+	line-height: 32px;
+	float:left;
+}
+.xian{
+	width: 1px;
+	height: 12px;
+	background: #808080;
+	float: left;
+	margin-left: 14px;
+	margin-top: 10px;
+}
+.zc{
+
+	margin-left: 14px;
+	/*float: right;*/
+}
+.wddd{
+	margin-left: 14px;
+}
+.gg{
+	width: 72px;
+	height: 32px;
+/*	background: pink;*/
+	float:left;
+	font-size: 12px;
+	color: #808080;
+	line-height: 32px;
+	float:left;
+}
+.ggt{
+	margin-top: 7px;
+	float: left;
+	margin-right: 6px;
+}
+.wzgg{
+	float: left;
+}
+.weixin{
+	margin-top: 7px;
+	float: right;
+	margin-right: 6px;
+}
+.weibo{
+	margin-top: 7px;
+	float: right;
+	margin-right: 6px;
+}
+/*分类开始*/
+
+.shousuokuang{
+	width: 437px;
+	height: 86px;
+	float: right;
+}
+.shousuokuang_sousuo{
+	width: 261px;
+	height: 29px;
+	border:1px solid #c9caca;
+	display: block;
+	margin-top:28px;
+	float: left;
+}
+.shousuokuang_sousuozi{
+	width: 49px;
+	height: 29px;
+	background: #b81c20;
+	border:1px solid #c9caca;
+	border-left: 0;
+	display: block;
+	float: left;
+	margin-top: 28px;
+	margin-right: 24px;
+}
+.shousuokuang_sousuozi_zi{
+	font-size: 14px;
+	color: white;	
+	text-align: center;
+	line-height: 29px;
+}
+.shousuokuang_gouwuche{
+	width: 100px;
+	height: 29px;
+	float: left;
+	background-image:url(../img/ss.jpg); 
+	background-position: left top; 
+	margin-top: 28px;
+	display:block;
+
+}
+.shousuokuang_gouwuche_gwczi{
+	font-size: 14px;
+	color: white;
+	line-height: 29px;
+    text-align: center;
+	display:block;
+	margin-left: 25px;
+}
+.shousuokuang_remen{
+	font-size: 14px;
+	color:#727171;
+	margin-top: 5px;
+	float: left;
+
+}
+
+.fenlei_leibie{
+	width: 1200px;
+	height: 83px;
+	line-height: 83px;
+	float: left;
+}
+.fenlei_logo{
+    width: 1100px;
+    height: 83px;
+    float: right;
+
+    display: block;
+}
+.fenlei_logo_yijibiaoti{
+	width: 109px;
+	height: 100%;
+	display: block;
+	float: left;
+}
+
+.fenlei_logo_yijibiaoti_diyige{
+	font-size: 14px;
+	color: #727171;
+	line-height: 83px;
+	text-align: center;
+}
+.fenlei_logo_shidaodao{
+	width: 1px;
+	height: 12px;
+	background: #727171;
+	margin-top: 35px;
+	display: inline-block;
+	float: left;
+}
+
+
+/*分类结束
+*/
+
+
+
+/*banner开始*/
+.banner{
+	width: 1200px;
+	height: 535px;
+	float:left;/*background: red;*/
+	position:relative;
+}
+.banner a{
+	display: block;
+	width: 1200px;
+	height: 535px;
+}
+.banner_zuoanniu{
+	width: 20px;
+	height: 53px;
+	float: left;
+    /*background-color: red;*//*背景色*/
+    background-image: url(../img/zuoyou.png);/*左按钮*/
+    background-position: -1px -4px;
+    position: absolute;
+    left: 13px;
+    bottom: 0px;
+    top: 0px;
+    margin-top: auto;
+    margin-bottom: auto;
+    cursor:pointer;	
+    
+}
+.banner_zuoanniu:hover{
+	background-position: -81px -67px;
+}
+
+.banner_youanniu{
+	width: 20px;
+	height: 53px;
+	/*background: red;*/
+	position: absolute;
+    right: 13px;
+    bottom: 0;
+    top: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-image: url(../img/zuoyou.png);/*右按钮*/
+    background-position: 21px -5px;/*在网页中可以看移动多少合适。第一个是左右，第二个是上下。*/
+    cursor:pointer;/*鼠标变成手*/
+}
+/*伟类选择器*/
+.banner_youanniu:hover{
+	background-position: -59px -66px;
+}
+/*.banner:hover .banner.xiaoyu{
+	background-position:-60px -90px;}*/
+.banner_lunbo{
+	width: 112px;
+	height: 12px;
+	background: pink;
+	position: absolute;
+	bottom: 23px;
+	/*定位垂直剧中*/
+	left: 0;
+	right: 0;
+	margin:auto;
+	cursor:pointer;
+}
+/*banner结束*/
+.neikuan{
+	     width:1200px ;     
+		     margin:0 auto; } 
+
+.nk h2{
+	width: 1200px;
+	background: red;
+	font-size: 18px;
+	color: #9a9aa7;
+	font-weight: normal;
+	text-align: center;
+	margin-bottom: 730px;
+}
