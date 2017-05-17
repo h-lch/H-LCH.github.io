@@ -1084,40 +1084,24 @@
 			</div>
 		</section>
 	</footer>
-                                                        
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	$div.eq(i).css().parent().siblings().find("div_link").
 
 	<script type="text/javascript" src="js/animate.js"></script>
 	<script type="text/javascript" src="js/function.js"></script>
 	<script type="text/javascript" src="js/hongkuai.js"></script>
+	<script src="js/jquery.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			lunbo(".banner-you",".tu",2,3000,1)
+		    //轮播
+			lunbo(".banner-you",".tu",2,3000,1);
+			//单击变换
+			$(".nav_content").mouseover(function () {
+				var index = $(this).index();
+				console.log(index)
+            })
+
 		})
 	</script>	
 </body>

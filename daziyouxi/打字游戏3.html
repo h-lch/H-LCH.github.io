@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @keyframes rotate{
+            0%{
+                transform:rotate(0deg);
+            }
+            100%{
+                transform:rotate(360deg);
+            }
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        * {
+            user-select: none;
+            /*去除浏览器默认*/
+        }
+
+        .scene {
+            width: 1000px;
+            height: 100%;
+            background:url("img/bg.png") no-repeat;
+            margin: 0 auto;
+        }
+
+        .main {
+            width: 1000px;
+            height: 100%;
+            float: left;
+            background:url("img/bg.png") no-repeat;
+            position: relative;
+        }
+
+        .banner{
+            width:1000px;
+            height: 100%;
+            background:url("img/bg.png") no-repeat;
+            position: relative;
+        }
+
+        .music{
+            width:50px;
+            height:50px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            position: absolute;
+            top:20px;
+            right: 34px;
+            background: url("img/music.png")no-repeat;
+            background-position: center center;
+            background-color:#FEC743;
+            transform:rotate(360deg);
+            animation:rotate 3s linear infinite;
+            /*transition:all 1s;*/
+            cursor: pointer;
+        }
+
+        .anniubox{
+            width:400px;
+            height:300px;
+            /*background: yellow;*/
+            /*background:url("img/logo.png") no-repeat;*/
+            position: absolute;
+            top:50%;
+            left:50%;
+            margin-left:-210px;
+            margin-top: -150px;
+            cursor: pointer;
+        }
+
+        .shang{
+            width:100%;
+            height:200px;
+            background:url("img/logo.png") no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .xia{
+            width:100%;
+            height:100px;
+            /*background: red;*/
+            position: relative;
+        }
+
+        .xialeft{
+            width:180px;
+            height: 63px;
+            float: left;
+            background:url("img/choose.png") no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            top:15px;
+            margin-left: 10px;
+        }
+        .xiaright{
+            width:180px;
+            height: 63px;
+            float: left;
+            background:url("img/start.png") no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            top:15px;
+            right:0;
+            margin-right: 10px;
+        }
+
+        .xialeft:hover{
+            transform: scale(1.1);
+        }
+
+        .xiaright:hover{
+            transform: scale(1.1);
+        }
+
+        .control {
+            width: 1000px;
+            height: 55px;
+            /*background-color: lightpink;*/
+            position: absolute;
+            /*margin:0 auto;*/
+            /*float: left;*/
+            /*display: none;*/
+        }
+
+        .box {
+            width: 180px;
+            height: 45px;
+            margin:4px 5px;
+            background:url("img/scor.png") no-repeat;
+            background-size: 100% 100%;
+            /*border-radius: 10px;*/
+            float: left;
+            position: relative;
+        }
+
+        .stop{
+            width: 50px;
+            height:50px;
+            background: url("img/stop.png")no-repeat;
+            background-size: 100% 100%;
+            float: right;
+            margin-right: 50px;
+        }
+
+        .box .name {
+            height: 20px;
+            font-size: 14px;
+            color: #fff3c2;
+            text-align: center;
+            line-height: 20px;
+            position: absolute;
+            left: 43%;
+            top: 42%;
+        }
+
+        .scor, .state, .life {
+            width: 80%;
+            height: 30px;
+            font-family: 微软雅黑;
+            color: #fff;
+            margin: 0 auto;
+            font-size: 14px;
+            text-align: center;
+            /*line-height: 30px;*/
+            /*border-radius: 5px;*/
+            position: absolute;
+            top: 42%;
+            left: 31%;
+        }
+
+        /*.stop {*/
+            /*font-family: 微软雅黑;*/
+            /*font-size: 14px;*/
+            /*font-weight: 700;*/
+            /*line-height: 55px;*/
+            /*text-align: center;*/
+            /*cursor: pointer;*/
+        /*}*/
+
+        .letter {
+            width: 80px;
+            height: 80px;
+            /*border: 1px solid red;*/
+            text-align: center;
+            line-height: 80px;
+            font-size: 30px;
+            font-weight: bold;
+            position: absolute;
+            color: #000;
+            /*background: #fff;*/
+        }
+
+        .btn {
+            width: 80%;
+            height: 30px;
+            border-radius: 5px;
+            background: #FF8000;
+            text-align: center;
+            line-height: 18px;
+            color: #fff;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+
+        .overbox{
+            width:484px;height:419px;
+            background:url(img/over.png) no-repeat center;
+            position: absolute;
+            left:0;right:0;top:0;bottom:0;
+            margin:auto;
+        }
+        .score{
+            width: 100px;
+            height: 40px;
+            margin-left: 282px;
+            margin-top: 150px;
+            line-height: 40px;
+            font-size: 24px;
+            color: #333;
+        }
+        .maxscore{
+            width:100px;height:40px;
+            margin-left:282px;
+            margin-top:5px;
+            line-height:40px;
+            font-size: 24px;
+            color: #333;
+        }
+        .btns{
+            width:250px;height:93px;
+            margin:0 auto;
+            margin-top:30px;
+        }
+        .restart{
+            width:93px;height:93px;
+            background:url(img/restart.png);
+            float:left;
+            cursor:pointer;
+            transition:all 1s;
+        }
+        .restart:hover{
+            transform:rotate(360deg);
+        }
+        .quit{
+            width:93px;height:93px;
+            background:url(img/quit.png);
+            float:right;
+            cursor:pointer;
+            background-size:100% 100%;
+            transition:all 1s;
+        }
+
+        .quit:hover{
+            transform: translateX(-30px);
+        }
+
+        .mask2{
+            width:100%;height:100%;
+            background:rgba(0,0,0,0.5);
+            position: absolute;
+            left:0;top:0;
+            display:none;
+            z-index:99;
+        }
+        .stopbox{
+            width:470px;height:220px;
+            background:url(img/stopbox.png);
+            position:absolute;
+            left:0;right:0;top:0;bottom:0;
+            margin:auto;
+            display:flex;
+            align-items:flex-end;
+            justify-content:space-around;
+        }
+        .continues{
+            width:93px;height:93px;
+            background:url(img/continue.png);
+            margin-bottom:30px;
+            cursor:pointer;
+            transition:all 1s;
+        }
+        .continues:hover{
+            transform:scale(1.1);
+        }
+        .stop-restart{
+            width:93px;height:93px;
+            background:url(img/restart.png);
+            margin-bottom:30px;
+            cursor:pointer;
+            transition:all 1s;
+        }
+        .stop-restart:hover{
+            transform:rotate(360deg);
+        }
+        .stop-quit{
+            width:93px;height:93px;
+            background:url(img/quit.png);
+            background-size:100% 100%;
+            margin-bottom:30px;
+            cursor:pointer;
+            transition:all 1s;
+        }
+        .stop-quit:hover{
+            transform:translateX(-30px);
+        }
+    </style>
+</head>
+<body>
+<div class="scene">
+    <div class="banner">
+        <div class="music"></div>
+        <div class="anniubox">
+            <div class="shang">
+                <div class="shangtu"></div>
+            </div>
+            <div class="xia">
+                <div class="xialeft"></div>
+                <div class="xiaright begin"></div>
+            </div>
+        </div>
+    </div>
+    <div class="main"></div>
+    <div class="control">
+        <div class="box">
+            <div class="name">得分</div>
+            <div class="scor">0</div>
+        </div>
+        <div class="box">
+            <div class="name">关卡</div>
+            <div class="state">1</div>
+        </div>
+        <div class="box">
+            <div class="name">生命</div>
+            <div class="life">5</div>
+        </div>
+        <!--<div class="box">-->
+            <!--<div class="begin">开始</div>-->
+        <!--</div>-->
+        <div class="stop"></div>
+    </div>
+    <!--暂停-->
+    <div class="mask2">
+        <div class="stopbox">
+            <div class="continues"></div>
+            <div class="stop-restart"></div>
+            <div class="stop-quit"></div>
+        </div>
+    </div>
+    <!--结束-->
+    <!--<div class="mask">-->
+        <!--<div class="overbox">-->
+            <!--<div class="score">0</div>-->
+            <!--<div class="maxscore">0</div>-->
+            <!--<div class="btns">-->
+                <!--<div class="restart"></div>-->
+                <!--<div class="quit"></div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+</div>
+<script>
+    //创建字母
+    var main = document.querySelector(".main");
+    const scor = document.querySelector(".scor");
+    const begin = document.querySelector(".begin");
+    const stop = document.querySelector(".stop");
+    const state = document.querySelector(".state");
+    const life = document.querySelector(".life");
+    const banner = document.querySelector(".banner");
+    const mask2 = document.querySelector(".mask2");
+    const restart = document.querySelector(".restart");
+    const quit = document.querySelector(".quit");
+    const continues = document.querySelector(".continues");
+    const start2 =document.querySelector(".stop-restart");
+    class Game {
+        constructor(main, scor, state, life) {
+            this.main = main;
+            this.scor = scor;
+            this.state = state;
+            this.lifele = life;
+            this.life = 5;
+            this.guan = 1;
+            this.num = 3;
+            this.fenshu = 0;
+            this.obj = {};
+            this.speed = 5;
+            this.height = window.innerHeight;
+            this.flag = true;
+//            this.st = null;
+            this.bestscor = localStorage.bestscor?JSON.parse(localStorage.bestscor):0;
+        }
+
+        _creatLetter() {
+            var div = document.createElement("div");
+            div.className = "letter";
+            do {
+                var rn = Math.floor(Math.random() * 26 + 65);
+                var le = String.fromCharCode(rn);
+            } while (this.obj[le]);
+            div.style.backgroundImage="url(img/"+le+".png)";
+            div.style.backgroundSize="100% 100%";
+//            div.innerHTML = le;
+            do {
+                var rl = Math.random() * 720;
+            } while (this._check(rl));
+            var rt = -Math.random() * 100;
+            div.style.left = rl + "px";
+            div.style.top = rt + "px";
+            this.obj[le] = {left: rl, top: rt, el: div};
+            this.main.appendChild(div);
+        }
+
+        _check(left) {
+            for (var i in this.obj) {
+                if (left > this.obj[i].left - 80 && left < this.obj[i].left + 80) {
+                    return true;
+                }
+            }
+        }
+
+        start() {
+            for (var i = 0; i < this.num; i++) {
+                this._creatLetter();
+            }
+//            control.style.display="block";
+            this._move();
+            this._keydown();
+            this.flag = false;
+        }
+
+        _move() {
+            this.st = setInterval(function () {
+                for (var i in this.obj) {
+                    var t = this.obj[i].top;
+                    t += this.speed;
+                    this.obj[i].top = t;
+                    this.obj[i].el.style.top = t + "px";
+                    if (t > this.height) {
+                        this.life--;
+                        this.lifele.innerHTML = this.life;
+                        this.main.removeChild(this.obj[i].el);
+                        delete this.obj[i];
+                        this._creatLetter();
+                        if (this.life == 0) {
+                            this._gameover();
+                            return;
+                        }
+                    }
+                }
+            }.bind(this), 50)
+        }
+
+        _keydown() {
+            document.onkeydown = function (e) {
+                var keycode = e.keyCode;
+                var l = String.fromCharCode(keycode);
+                if (this.obj[l]) {
+                    this.main.removeChild(this.obj[l].el);
+                    delete this.obj[l];
+                    this.fenshu++;
+                    scor.innerHTML = this.fenshu;
+                    if (this.fenshu % 10 == 0) {
+                        this._upstate();
+                    }
+                    this._creatLetter();
+                }
+            }.bind(this);
+        }
+
+        _upstate() {
+            this.guan++;
+            this.state.innerHTML = this.guan;
+            if (this.guan <= 4) {
+                this._creatLetter();
+            } else {
+                this.speed++;
+            }
+        }
+
+        _gameover() {
+//            if(this.scor<this.bestscor){
+//                console.log("555");
+//                alert(`结束，最终得分${this.fenshu}`);
+//            }else{
+//                alert(`结束，最终得分${this.fenshu}`);
+                alert(`结束，最终得分${this.fenshu}`);
+//            }
+            this.main.innerHTML = null;
+            this.obj = {};
+            this.speed = 5;
+            this.fenshu = 0;
+            this.scor.innerHTML = 0;
+            this.life = 5;
+            this.lifele.innerHTML = 5;
+            this.guan = 1;
+            this.state.innerHTML = 1;
+            this.flag = true;
+            clearInterval(this.st);
+        }
+
+        pause() {
+            clearInterval(this.st);
+            document.onkeydown = null;
+        }
+
+        play() {
+            this._move();
+            this._keydown();
+        }
+    }
+
+    var game = new Game(main, scor, state, life);
+    begin.onclick = function () {
+        banner.style.display="none";
+        if (game.flag) {
+            game.start();
+        }
+    };
+    var fl = true;
+    stop.onclick = function () {
+        mask2.style.display="block";
+//        if (fl) {
+//            stop.style.backgroundImage="url(img/continue.png)";
+//            game.pause();
+//        } else {
+            stop.style.backgroundImage="url(img/stop.png)";
+            game.pause();
+//        }
+        fl = !fl;
+    };
+    continues.onclick=function () {
+        mask2.style.display="none";
+        game.play();
+    };
+    start2.onclick=function () {
+        mask2.style.display="none";
+        banner.style.display="block";
+        game.gameover();
+//        game.pause();
+        clear();
+//        game.start();
+//        game.play();
+    }
+
+</script>
+</body>
+</html>

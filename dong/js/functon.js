@@ -371,16 +371,15 @@ function louceng(anniu,Section,anniukuai,daohang,pic,picurl,chushise,activese,do
 	//you  右按钮
 
 // 透明度轮播
-function toumingdu(pic,bigbannerBox,lis,colorArr,tuActiveBigZ,liactiveBgColor,lunboTime,tuChushiZ,liscolor,bbox){
+function toumingdu(pic,bigbannerBox,lis,colorArr,tuActiveBigZ,liactiveBgColor,lunboTime,tuChushiZ,liscolor,zuo,you,bbox){
 
 	const tu=$(pic);
 	const banner=$(bigbannerBox)[0];
 	const li = $(lis);
 	const color = colorArr;
-	// const leftbtn=$(zuo)[0];
-	// const rightbtn=$(you)[0];
+	const leftbtn=$(zuo)[0];
+	const rightbtn=$(you)[0];
 	const box=$(bbox)[0];
-	// const leftbtn = document.querySelectorAll(zuo);
 	var flag=true;
 
 	tu[0].style.opacity=tuActiveBigZ;
@@ -397,20 +396,20 @@ function toumingdu(pic,bigbannerBox,lis,colorArr,tuActiveBigZ,liactiveBgColor,lu
 	// leftbtn.onmouseover=function(){
 	// 	clearInterval(t);
 	// }
-	// leftbtn.onclick=function(){
-	// 	if(flag){
-	// 		move("l");
-	// 	}
-	// }
+	leftbtn.onclick=function(){
+		if(flag){
+			move("l");
+		}
+	}
 	// rightbtn.onmouseover=function(){
 	// 	clearInterval(t);
 	// }
-	// rightbtn.onclick=function(){
-	// 	if(flag){
-	// 		move("r");
-	// 	}	
+	rightbtn.onclick=function(){
+		if(flag){
+			move("r");
+		}	
 
-	// }
+	}
 	box.onmouseover=function(){
 		clearInterval(t);
 	}

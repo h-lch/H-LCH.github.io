@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片动画</title>
+    <style>
+
+        canvas{
+            background:#000;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="500" height="500"></canvas>
+    <script>
+    window.onload=function () {
+        let canvas = document.querySelector("canvas");
+        let cobj = canvas.getContext("2d");//得到画环境
+        let x =200;
+        let y = 200;
+        canvas.onmousemove=function (e) {//鼠标移动
+            x = e.offsetX;
+            y = e.offsetY;
+        }
+
+        class lizi {  //初始化
+            constructor(canvas,cobj,x,y) {    //构造函数
+                this.canvas = canvas;
+                this.cobj = cobj;
+                this.x =x;
+                this.y = y;
+                this.r = 5;
+                this.speedX = 6 * Math.random()-2;      //定义水平方向X的速度
+                this.speedY = -5;
+                this.g = 0.3;//重力  重力-Y=负值
+                this.color=`rgb(${parseInt(255*Math.random())},${parseInt(255*Math.random())},${parseInt(255*Math.random())})`
+            }
+
+            draw() {//方法
+                this.cobj.save();//笔的方法：保存画图环境
+                this.cobj.beginPath();//提笔    建路径
+                this.cobj.translate(this.x, this.y);//移动    坐标
+                this.cobj.arc(0, 0, this.r, 0, Math.PI * 2);//画到0,0点，半径/画什么样的圆弧
+                this.cobj.fillStyle=this.color;
+                this.cobj.fill();//填充
+                this.cobj.restore();//还原画图环境
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.speedY += this.g;
+                this.y += this.speedY;
+            }
+        }
+
+        let arr = [];
+        let t = setInterval(function () {//让他动起来，给一个事件函数
+            cobj.clearRect(0, 0, 500, 500);
+            let liziobj = new lizi(canvas, cobj,x,y);//初始化一个新的对象
+            arr.push(liziobj);
+            for (let i = 0; i < arr.length; i++) {
+                arr[i].draw();
+                arr[i].update();
+            }
+            if (arr.length > 200) {
+                arr.shift();
+            }
+        },50);
+    }
+
+    </script>
+</body>
+</html>

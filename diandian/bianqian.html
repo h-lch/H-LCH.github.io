@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: "微软雅黑";
+        }
+        body{
+            display: flex;
+            flex-direction:column;
+        }
+
+        .title {
+            width: 100%;
+            height: 100%;
+            background: #0ff;
+            line-height: 100px;
+            font-size: 20px;
+            font-weight: bold;
+            padding-left: 30px;
+        }
+
+        .inputarea {
+            width: 100%;
+            height: 50%;
+        }
+
+        #text {
+            width: 300px;
+            height: 50px;
+            float: left;
+        }
+
+        #submit {
+            width: 150px;
+            height: 50px;
+            float: left;
+            background: pink;
+            border: none;
+            cursor: pointer;
+        }
+
+        .show {
+            width: 100%;
+            background: firebrick;
+            flex-grow:1;
+        }
+        .plan{
+            width:50%;
+            height:80%;
+            overflow: auto;
+            background: orange;
+            float: left;
+        }
+        .done{
+            width:50%;
+            height:80%;
+            overflow: auto;
+            background: #963;
+            float: right;
+        }
+        ul{
+            list-style: none;
+            margin:0;
+            padding:0;
+
+        }
+        ul li{
+            overflow: hidden;
+        }
+        ul li input{
+            float: left;
+            width:30px;
+            margin:0;
+            padding:0;
+            height:30px;
+        }
+        ul li span{
+            float: left;
+            width:300px;
+            height:auto;
+            /*border:1px dashed #ccc;*/
+            line-height:30px;
+            color: #fff;
+            padding-left:30px;
+        }
+        ul li time{
+            float: right;
+            width:190px;
+            height:30px;
+            background: #63a35c;
+            text-align: center;
+            line-height:30px;
+            color: #fff;
+        }
+        .contenttitle{
+            width:50%;
+            height:30px;
+            float: left;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            color:#fff;
+            line-height:30px;
+            background: dodgerblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">TO　DO　LIST</div>
+    <div class="inputarea">
+        <input type="text" id="text">
+        <input   type="button" id="submit" value="提交">
+    </div>
+    <div class="show">
+        <div class="contenttitle">未完成</div>
+        <div class="contenttitle">己完成</div>
+        <ul class="plan">
+            <li><input type="checkbox"><span contenteditable="true">sfalkjk</span><time>2017-5-3 15:23</time></li>
+        </ul>
+        <ul class="done">
+            <li><input type="checkbox"><span contenteditable="true">sfalkjk</span><time>2017-5-3 15:23</time></li>
+        </ul>
+    </div>
+    <script>
+        const text=document.querySelector("#text");
+        const submit=document.querySelector("#submit");
+        const plan=document.querySelector(".plan");
+        const done=document.querySelector(".done");
+        function getData() {
+            return localStorage.todo?JSON.parse(localStorage.todo):[];
+        }
+        function savaData(data) {
+            localStorage.todo=JSON.stringify(data);
+        }
+        function reWrite() {
+            var data=getData();
+            var str1="",str2="";
+            data.forEach(function (v,i) {
+                if(!v.done){
+                    str1+=`<li id=${i}><input type="checkbox" onfocus="changestate(this)"><span contenteditable="true" onblur="changecontent(this)">${v.content}</span><time>${time(v.time)}</time></li>`
+                }else{
+                    str2+=`<li id=${i}><input type="checkbox" onfocus="del(this)"><span contenteditable="true">${v.content}</span><time>${time(v.time)}</time></li>`
+                }
+            });
+            plan.innerHTML=str1;
+            done.innerHTML=str2;
+        }
+        reWrite();
+        submit.onclick=function () {
+            if(text.value==""){
+                return;
+            }
+            var val=text.value;
+            text.value="";
+            var data=getData();
+            var date=new Date();
+            var time=date.getTime();
+            data.push({content:val,time,done:false});
+            savaData(data);
+            reWrite();
+        }
+        function time(t) {
+            var date=new Date();
+            date.setTime(t);
+            var year=date.getFullYear();
+            var month=setZero(date.getMonth()+1);
+            var day=setZero(date.getDate());
+            var hour=setZero(date.getHours());
+            var minutes=setZero(date.getMinutes());
+            var seconds=setZero(date.getSeconds());
+            return year+"/"+month+"/"+day+"/"+hour+":"+minutes+":"+seconds;
+        }
+        function setZero(num) {
+            if(num<10){
+                return "0"+num;
+            }else {
+                return num;
+            }
+        }
+        function changestate(ele) {  //概念
+            var id=ele.parentNode.id;//父节点
+            var data=getData();
+            data[id].done=true;
+            savaData(data);
+            reWrite();
+        }
+        function del(ele) {   //删除
+            var id=ele.parentNode.id;
+            var data=getData();
+            data.splice(id,1);
+            savaData(data);
+            reWrite();
+        }
+        function changecontent(ele) {   //可以修改内容
+            var id=ele.parentNode.id;
+            var val=ele.innerHTML;
+            var data=getData();
+            data[id].content=val;
+            savaData(data);
+            reWrite();
+        }
+    </script>
+</body>
+</html>

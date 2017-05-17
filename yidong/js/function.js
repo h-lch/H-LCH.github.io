@@ -520,12 +520,12 @@ function jdlunbo1(box,zleftbtn,zrightbtn,dabox){
 
 	let flag=true;   //定一个开关变量
 	let n=1;		//在框内出现几张图
-	var t = setInterval(move,1500);   //每一秒循环一次
+	var t = setInterval(move,3000);   //每一秒循环一次
 	function move(type="l"){          //循环的内容
 		flag=false;		//在刚循环的时候，开关就是关着的
 
 		if(type=="l"){
-			animate(zybox,{left:-zuoyouw},1000,function(){		//
+			animate(zybox,{left:-zuoyouw},500,function(){		//
 				for(let i=0;i<n;i++){
 					let first = zybox.firstElementChild;  //获取第一个元素
 					zybox.appendChild(first);				//把第一个子元素放在父元素的最后面
@@ -541,7 +541,7 @@ function jdlunbo1(box,zleftbtn,zrightbtn,dabox){
 				zybox.style.left=-zuoyouw+"px";
 															//ul盒子的marginLeft在左边（在动画之前就先定位置，否则移动后，zuoyou盒子是空白的） 
 			}
-			animate(zybox,{left:0},1000,function(){
+			animate(zybox,{left:0},500,function(){
 				flag=true;
 			});
 		}
@@ -551,13 +551,13 @@ function jdlunbo1(box,zleftbtn,zrightbtn,dabox){
 		clearInterval(t);
 	}
 	zybox.onmouseout=function(){
-		t=setInterval(move,1500);
+		t=setInterval(move,3000);
 	}
 	leftbtn.onmouseover=function(){
 		clearInterval(t);
 	}
 	leftbtn.onmouseout=function(){
-		t=setInterval(move,1500);
+		t=setInterval(move,3000);
 	}
 	leftbtn.onclick=function(){
 		if(flag==true){
@@ -568,7 +568,7 @@ function jdlunbo1(box,zleftbtn,zrightbtn,dabox){
 		clearInterval(t);
 	}
 	rightbtn.onmouseout=function(){
-		t=setInterval(move,1500);
+		t=setInterval(move,3000);
 	}
 	rightbtn.onclick=function(){
 		if(flag==true){
