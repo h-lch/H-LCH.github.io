@@ -13,6 +13,35 @@
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
+p{
+    margin: 0 0 10px;
+}
+.clear:before{
+    content: "";
+    width: 0;
+    height:0;
+    display: block;
+    clear:both;
+}
+.bb:before{
+    content: "";
+    display: table;
+}
+.cc:before{
+    content: "";
+    width: 0;
+    height:0;
+    display: block;
+    clear: both;
+}
+.clear:after{
+    content: "";
+    width: 0;
+    height:0;
+    display: block;
+    clear: both;
+
+}
 body{
 	color: #333;
 	font-size: 14px;	
@@ -694,6 +723,7 @@ img{
     margin: 0 0 10px;
 }*/
 .item_text_zi2{
+    /*float: right;*/
     display: block;
     position: absolute;
     bottom: 0;
@@ -822,30 +852,47 @@ img{
     padding: 5px 0;
     border: none;
     border-bottom: 3px solid transparent;
-    color: #00a8f6;
-    border-bottom-color: #00a8f6;
+    color: #333;
+    /*border-bottom-color: #00a8f6;*/
     background-color: #fff;
     cursor: default;
     position: relative;
     display: block;
 }
-.nav_tabs1_a2{
-	color: #333;
-    border-bottom: 3px solid transparent;
-    background-color: inherit;
+.nav_tabs1_a.active{
+    color: #00a8f6;
+    border-bottom-color: #00a8f6;
 }
-.nav_tabs1_a2:hover{
-    color: #00a8f6;s
+/*.nav_tabs1_a{*/
+	/*color: #333;*/
+    /*border-bottom: 3px solid transparent;*/
+    /*background-color: inherit;*/
+/*}*/
+.nav_tabs1_a:hover{
+    color: #00a8f6;
+}
+.nav_content1{
+    /*position: relative;*/
+    overflow: hidden;
 }
 .nav_active{
-	display: block;
+	/*display: block;*/
     padding: 19px 0 0 5px;
+/*    position: absolute;
+    top:0;
+    left:0;
+    overflow: hidden;*/
 }
 .nav_list{
     padding-left: 0;
     list-style: none;
     margin-top: 0;
     margin-bottom: 0;
+    z-index: 1;
+}
+.nav_list .active{
+    z-index: 20;
+    /*opacity:1;*/
 }
 .nav_list_lii{
     margin-bottom: 10px;
@@ -873,8 +920,8 @@ img{
     height: 20px;
     line-height: 20px;
     text-align: center;
-    color: #fff;
-    background-color: red;
+    color: #333;
+    background-color:#e6e6e6;
 }
 .li_a_zi{
     float: left;
@@ -925,19 +972,13 @@ img{
     overflow: hidden;
 }
 .text_zi2{
+    float: right;
     padding: 3px 10px;
     border-radius: 5px;
     color: #fff;
     background-color: #00a8f6;
     border-color: #00a8f6;
 }
-
-
-
-
-
-
-
 
 /*热门*/
 .remenbox{
@@ -1218,8 +1259,8 @@ li{
    		margin-bottom: 37px;
 	}
 	.body_right_first_img{
-	     width: 140px;
-   		 height: 101px;
+        width: 165px;
+        height: 119px;
 	}
 	.item_text {
 		margin-left: 155px;
@@ -1507,15 +1548,13 @@ li{
 
 
 }
-
-
-
-
-
-
-
-
-
+/*最小屏*/
+@media screen and (max-width: 414px){
+    .hotnn_item_tu{
+        width:315px;
+        height:265px;
+    }
+}
 
 .daohang li{
 	position: relative;
