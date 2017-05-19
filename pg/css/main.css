@@ -168,6 +168,7 @@ nav>.nk>ul>.iconfont{
 	width: 20%;
 }
 .dib dt{
+	cursor:pointer;
 	padding:15px 0 5px;
 }
 .dib dd{
