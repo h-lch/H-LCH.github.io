@@ -193,7 +193,7 @@ header{
 /*}*/
 .about_left{
     width:50%;
-    /*height:475px;*/
+    height:475px;
     padding: 55px 0 50px 0;
     float: right;
     background: #f4f4f4;;
@@ -532,7 +532,7 @@ header{
     display: block;
     width: 100%;
     height:auto;
-    opacity:0.8;
+    /*opacity:0.8;*/
     /*transition: transform 0.5s;*/
     vertical-align: middle;
     backface-visibility: hidden;
@@ -540,10 +540,10 @@ header{
 .zhe{
     width:100%;
     height:100%;
-    background: rgba(0,0,0,.7);
     position: absolute;
     top:0;
     left:0;
+    display: none;
 }
 figcaption{
     width:100%;
@@ -561,10 +561,30 @@ figcaption h2{
     position: absolute;
     top:-12px;
     right: 30px;
-    left: 30px;
+    /*left: 30px;*/
     padding: 10px 0;
     transition: transform 0.35s;
     transform: translate3d(0,20px,0);
+}
+.yy{
+    position: absolute;
+    top: 78px;
+    right: 30px;
+    padding:10px 0;
+    color:#fff;
+    font-size: 16px;
+}
+.yy a{
+    font-family: 微软雅黑;
+    color:#fff;
+    font-weight: 500;
+}
+.tab_img_first_nei:hover .zhe{
+    background: rgba(0,0,0,.5);
+    display: block;
+}
+.tab_img_first_nei:hover figcaption h2 a{
+    display: block;
 }
 .xian{
     opacity:0;
@@ -582,6 +602,7 @@ figcaption h2{
 figcaption h2 a{
    color:#fff;
     font-size:18px;
+    display: none;
 }
 figcaption p{
     position: absolute;
