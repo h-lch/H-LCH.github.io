@@ -14,18 +14,18 @@
         $(function () {
             $('#he').fullpage({
                 anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
-                fixedElement:"menu,.next",
+                fixedElement: "menu,.next",
                 menu: '#menu',
-                menu:'.next',
+                menu: '.next',
                 continuousVertical: true,
-                afterLoad:function(an,index) {
+                afterLoad: function (an, index) {
                     if (index == 3) {
                         $(".index1").animate({width: 450});
                         $(".index2").animate({width: 400});
                         $(".index3").animate({width: 300});
                         $(".index4").animate({width: 100});
-                    }else if(index==5){
-                        $(".next").css("transform","rotate(-180deg)").addClass("active")
+                    } else if (index == 5) {
+                        $(".next").css("transform", "rotate(-180deg)").addClass("active")
                     }
                 },
                 onLeave: function (index) {
@@ -34,14 +34,14 @@
                         $(".index2").animate({width: 0});
                         $(".index3").animate({width: 0});
                         $(".index4").animate({width: 0});
-                    }else if(index==5){
-                        $(".next").css("transform","").removeClass("active");
+                    } else if (index == 5) {
+                        $(".next").css("transform", "").removeClass("active");
                     }
                 }//onleave 动画飞入飞出
             });
             //向下箭头
             $(".next").click(function () {
-                if($(this).hasClass("active")){
+                if ($(this).hasClass("active")) {
                     $.fn.fullpage.moveTo(0);
                 }
                 $.fn.fullpage.moveSectionDown();
@@ -58,35 +58,37 @@
                 $(".owl_page span").filter(".active").removeClass("active").end().eq(index).addClass("active");
                 $(".first").filter(".active").removeClass("active").end().eq(index).addClass("active");
             })
-                var t = setInterval(move,1000);
-                var num = 0;
-                function move(){
-                    num++;
-                    if(num >= 3){
-                        num = 0;
-                    }
-                    if(num<0){
-                        num = 2;
-                    }
-                    var index = num;
-                    $(".owl_page span").filter(".active").removeClass("active").end().eq(num).addClass("active");
-                    $(".first").filter(".active").removeClass("active").end().eq(num).addClass("active");
+            var t = setInterval(move, 1000);
+            var num = 0;
+
+            function move() {
+                num++;
+                if (num >= 3) {
+                    num = 0;
                 }
-                $(".about_js").hover(function () {
-                    clearInterval(t);
-                },function(){
-                    t = setInterval(move,1000);
-                });
+                if (num < 0) {
+                    num = 2;
+                }
+                var index = num;
+                $(".owl_page span").filter(".active").removeClass("active").end().eq(num).addClass("active");
+                $(".first").filter(".active").removeClass("active").end().eq(num).addClass("active");
+            }
+
+            $(".about_js").hover(function () {
+                clearInterval(t);
+            }, function () {
+                t = setInterval(move, 1000);
+            });
         });
 
 
-//        transitions:all 1s;
+        //        transitions:all 1s;
         //选项卡
     </script>
 </head>
 <body>
-    <div class="top_nav">
-    <div class="logo" >
+<div class="top_nav">
+    <div class="logo">
         <ul id="menu">
             <li>
                 <a href="#page1" data-menuanchor="page1">简介</a>
@@ -107,104 +109,104 @@
     </div>
 </div>
 <!--banner-->
-    <div id="he">
+<div id="he">
     <div class="section">
-    <header>
-    <div class="neikuan clear">
-        <div class="top_header">
-            <div class="banner_info">
-                <div class="header_right">
-                    <h1><a href="">嗨！ </a>
-                        <div class="jiao"></div>
-                    </h1>
-                    <h6><a href="">前端工程师</a></h6>
-                    <ul class="adress">
-                        <li>
-                            <ul class="adress_text">
-                                <li style="display: inline-block">
-                                    <b>姓名</b>
+        <header>
+            <div class="neikuan clear">
+                <div class="top_header">
+                    <div class="banner_info">
+                        <div class="header_right">
+                            <h1><a href="">嗨！ </a>
+                                <div class="jiao"></div>
+                            </h1>
+                            <h6><a href="">前端工程师</a></h6>
+                            <ul class="adress">
+                                <li>
+                                    <ul class="adress_text">
+                                        <li style="display: inline-block">
+                                            <b>姓名</b>
+                                        </li>
+                                        <li style="display: inline-block">
+                                            <b>梁彩红</b>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li style="display: inline-block">
-                                    <b>梁彩红</b>
+                                <li>
+                                    <ul class="adress_text">
+                                        <li style="display: inline-block">
+                                            <b>性别</b>
+                                        </li>
+                                        <li style="display: inline-block">
+                                            <b>女</b>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="adress_text">
+                                        <li style="display: inline-block">
+                                            <b>出生日期</b>
+                                        </li>
+                                        <li style="display: inline-block">
+                                            <b>1995/4/2</b>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="adress_text">
+                                        <li style="display: inline-block">
+                                            <b>电话</b>
+                                        </li>
+                                        <li style="display: inline-block">
+                                            <b>15703415341</b>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="adress_text">
+                                        <li style="display: inline-block">
+                                            <b>邮箱</b>
+                                        </li>
+                                        <li style="display: inline-block">
+                                            <b>1584428304@qq.com</b>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
-                        </li>
-                        <li>
-                            <ul class="adress_text">
-                                <li style="display: inline-block">
-                                    <b>性别</b>
-                                </li>
-                                <li style="display: inline-block">
-                                    <b>女</b>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul class="adress_text">
-                                <li style="display: inline-block">
-                                    <b>出生日期</b>
-                                </li>
-                                <li style="display: inline-block">
-                                    <b>1995/4/2</b>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul class="adress_text">
-                                <li style="display: inline-block">
-                                    <b>电话</b>
-                                </li>
-                                <li style="display: inline-block">
-                                    <b>15703415341</b>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul class="adress_text">
-                                <li style="display: inline-block">
-                                    <b>邮箱</b>
-                                </li>
-                                <li style="display: inline-block">
-                                    <b>1584428304@qq.com</b>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div class="header_left">
-                    <img src="" alt="">
+                        </div>
+                        <div class="header_left">
+                            <img src="" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </header>
     </div>
-</header>
-    </div>
-<!--关于我-->
-   <div class="section">
+    <!--关于我-->
+    <div class="section">
         <div class="about">
             <div class="about_left">
                 <div class="about_js">
-                        <div class="first active" style="width:675px">
-                                    <div class="about_left_grid">
-                                        <h2>
-                                            <a href="">嗨! </a>
-                                            <a href="">I'm </a>
-                                            <span>
+                    <div class="first active" style="width:675px">
+                        <div class="about_left_grid">
+                            <h2>
+                                <a href="">嗨! </a>
+                                <a href="">I'm </a>
+                                <span>
                                            梁彩红
                                         </span>
-                                        </h2>
-                                        <p>
-                                            <a>我的性格偏于内向，为人坦率、热情、讲求原则；处事乐观、专心、细致、头脑清醒；富有责任心、乐于助人。我还是一个正直忠诚、勤奋求实的人，会不断追求人格的自我完善；</a>
-                                            <a>明显的特点是乐观自信、温和开朗、稳重宽厚，因此，我人际关系和谐，适应环境能力较强。爱好电脑、科普知识，喜欢钻研，正因为这些增强了我的实干精神，习惯事情或问题及早解决。</a>
-                                            <a>一直以来，努力、积极、乐观、拼搏是我的人生信条，我相信，我会一直努力下去，做好自己，奉献社会。敢做敢拼，脚踏实地；做事认真负责，责任心强.最大的满足感在于该做的事顺利完成，以便有精力去关注其他，也就是追求感觉上的自我良好或优越感。最大的缺点是对没有秩序感的人可能缺乏足够的耐心，也可能因为心太细，会让别人误解我的一番好意。</a>
-                                        </p>
-                                        <ul>
-                                            <li><a href="#port" class="btn scroll">我的工作</a></li>
-                                            <li><a href="#port" class="btn scroll">雇用我</a></li>
-                                        </ul>
-                                    </div>
-                            </div>
-                        <div class="first" style="width:675px">
+                            </h2>
+                            <p>
+                                <a>我的性格偏于内向，为人坦率、热情、讲求原则；处事乐观、专心、细致、头脑清醒；富有责任心、乐于助人。我还是一个正直忠诚、勤奋求实的人，会不断追求人格的自我完善；</a>
+                                <a>明显的特点是乐观自信、温和开朗、稳重宽厚，因此，我人际关系和谐，适应环境能力较强。爱好电脑、科普知识，喜欢钻研，正因为这些增强了我的实干精神，习惯事情或问题及早解决。</a>
+                                <a>一直以来，努力、积极、乐观、拼搏是我的人生信条，我相信，我会一直努力下去，做好自己，奉献社会。敢做敢拼，脚踏实地；做事认真负责，责任心强.最大的满足感在于该做的事顺利完成，以便有精力去关注其他，也就是追求感觉上的自我良好或优越感。最大的缺点是对没有秩序感的人可能缺乏足够的耐心，也可能因为心太细，会让别人误解我的一番好意。</a>
+                            </p>
+                            <ul>
+                                <li><a href="#port" class="btn scroll">我的工作</a></li>
+                                <li><a href="#port" class="btn scroll">雇用我</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="first" style="width:675px">
                         <div class="about_left_grid">
                             <h2>
                                 <a href="">嗨hihi! </a>
@@ -223,7 +225,7 @@
                             </ul>
                         </div>
                     </div>
-                        <div class="first" style="width:675px">
+                    <div class="first" style="width:675px">
                         <div class="about_left_grid">
                             <h2>
                                 <a href="">嗨!!! </a>
@@ -243,24 +245,24 @@
                             </ul>
                         </div>
                     </div>
-                        <div class="lundian">
-                            <div class="dian">
-                                <div class="owl_page ">
-                                    <span class="active"></span>
-                                </div>
-                                <div class="owl_page">
-                                    <span ></span>
-                                </div>
-                                <div class="owl_page">
-                                    <span ></span>
-                                </div>
+                    <div class="lundian">
+                        <div class="dian">
+                            <div class="owl_page ">
+                                <span class="active"></span>
+                            </div>
+                            <div class="owl_page">
+                                <span></span>
+                            </div>
+                            <div class="owl_page">
+                                <span></span>
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
             <div class="about_right"></div>
         </div>
-   </div>
+    </div>
     <!--我的技能-->
     <div class="section">
         <div class="services">
@@ -299,7 +301,7 @@
                         </div>
                         <p class="b_lable" style="margin-top:50px;">HTML</p>
                         <div class="bar_yuan">
-                            <div class="bar_group_bar index2" >
+                            <div class="bar_group_bar index2">
                                 <div class="b_top">
                                     <span>70</span>
                                     <div class="b_jiao"></div>
@@ -314,7 +316,7 @@
                         </div>
                         <p class="b_lable" style="margin-top:50px;">Javascript</p>
                         <div class="bar_yuan">
-                            <div class="bar_group_bar index3" >
+                            <div class="bar_group_bar index3">
                                 <div class="b_top">
                                     <span>50</span>
                                     <div class="b_jiao"></div>
@@ -357,13 +359,16 @@
                     <div class="horizontalTabta" style="height: 647px;">
                         <ul class="table">
                             <li class="resp_tab resp_tab_active">
-                                <a href="#" title="">所有</a>
-                            </li>
-                            <li class="resp_tab">
-                                <a href="#" title="">PS</a>
+                                <a href="#" title="">网页</a>
                             </li>
                             <li class="resp_tab">
                                 <a href="#" title="">网页</a>
+                            </li>
+                            <li class="resp_tab">
+                                <a href="#" title="">网页</a>
+                            </li>
+                            <li class="resp_tab ">
+                                <a href="#" title="">绘图</a>
                             </li>
                             <li class="resp_tab ">
                                 <a href="#" title="">游戏</a>
@@ -374,11 +379,20 @@
                                 <div class="tab_img active" id="tabs-1">
                                     <div class=" tab_img_first">
                                         <div class="tab_img_first_nei">
-                                            <a href="fanke/index.html" style="display: block;">
+                                            <a href="" style="display: block;">
                                                 <img src="zhuye/img/fanke.jpg" alt="" class="tu">
-                                                <div class="zhe">
-                                                    <p>我的作品-凡客</p>
-                                                </div>
+                                                <div class="zhe"></div>
+                                            </a>
+                                            <a href="fanke/index.html" style="width:350px;height:
+                                             233px;position: absolute;">
+                                                <figcaption>
+                                                    <h2>
+                                                        <a href="">我的作品-凡客网</a>
+                                                    </h2>
+                                                    <div class="xian"></div>
+                                                    <p>Marley tried to convince her but she was not
+                                                        interested.</p>
+                                                </figcaption>
                                             </a>
                                         </div>
                                     </div>
@@ -386,39 +400,77 @@
                                         <div class="tab_img_first_nei">
                                             <a href="mi/index.html" style="display: block;">
                                                 <img src="zhuye/img/mi.jpg" alt="" class="tu">
-                                                <div class="zhe">
-                                                    <p>我的作品-小米</p>
-                                                </div>
+                                                <div class="zhe"></div>
+                                            </a>
+                                            <a href="mi/index.html" style="width:350px;height:
+                                             233px;position: absolute;">
+                                                <figcaption>
+                                                    <h2>
+                                                        <a href="">我的作品-小米网</a>
+                                                    </h2>
+                                                    <div class="xian"></div>
+                                                    <p>Marley tried to convince her but she was not
+                                                        interested.</p>
+                                                </figcaption>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="tab_img_first">
                                         <div class="tab_img_first_nei">
-                                            <a href="dong/index.html" style="display: block;">
+                                            <a href="" style="display: block;">
                                                 <img src="zhuye/img/dong.png" alt="" class="tu">
-                                                <div class="zhe">
-                                                    <p>我的作品-京东</p>
-                                                </div>
+                                                <div class="zhe"></div>
+                                            </a>
+                                            <a href="dong/index.html" style="width:350px;height:
+                                             233px;position: absolute;">
+                                                <figcaption>
+                                                    <h2>
+                                                        <a href="">我的作品-京东网</a>
+                                                    </h2>
+                                                    <div class="xian"></div>
+                                                    <p>Marley tried to convince her but she was not
+                                                        interested.</p>
+                                                </figcaption>
                                             </a>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="tab_img " id="tabs-2">
                                     <div class="tab_img_first">
                                         <div class="tab_img_first_nei">
                                             <a href="tianmao/tianmao.html" style="display: block;">
                                                 <img src="zhuye/img/mao.jpg" alt="" class="tu">
-                                                <div class="zhe">
-                                                    <p>我的作品-天猫</p>
-                                                </div>
+                                                <div class="zhe"></div>
+                                            </a>
+                                            <a href="tianmao/tianmao.html" style="width:350px;height:
+                                             233px;position: absolute;">
+                                                <figcaption>
+                                                    <h2>
+                                                        <a href="">我的作品-天猫网</a>
+                                                    </h2>
+                                                    <div class="xian"></div>
+                                                    <p>Marley tried to convince her but she was not
+                                                        interested.</p>
+                                                </figcaption>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="tab_img_first">
                                         <div class="tab_img_first_nei">
                                             <a href="yidong/index.html" style="display: block;">
-                                                <img src="zhuye/img/yidong.jpg" alt="" class="tu">
-                                                <div class="zhe">
-                                                    <p>我的作品-移动</p>
-                                                </div>
+                                                <img src="zhuye/img/yi.jpg" alt="" class="tu">
+                                                <div class="zhe"></div>
+                                            </a>
+                                            <a href="yidong/index.html" style="width:350px;height:
+                                             233px;position: absolute;">
+                                                <figcaption>
+                                                    <h2>
+                                                        <a href="">我的作品-移动网</a>
+                                                    </h2>
+                                                    <div class="xian"></div>
+                                                    <p>Marley tried to convince her but she was not
+                                                        interested.</p>
+                                                </figcaption>
                                             </a>
                                         </div>
                                     </div>
@@ -426,71 +478,18 @@
                                         <div class="tab_img_first_nei">
                                             <a href="yintai/inde.html" style="display: block;">
                                                 <img src="zhuye/img/yin.png" alt="" class="tu">
-                                                <div class="zhe">
-                                                    <p>我的作品-银泰</p>
-                                                </div>
+                                                <div class="zhe"></div>
                                             </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab_img " id="tabs-2">
-                                    <div class=" tab_img_first">
-                                        <div class="tab_img_first_nei">
-                                            <a href="hunshua/index.html" style="display: block;">
-                                                <img src="zhuye/img/g5.jpg" alt="" class="tu">
-                                                <div class="zhe">
-                                                    <p>我的作品-婚纱</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="tab_img_first">
-                                        <div class="tab_img_first_nei">
-                                            <a href="" style="display: block;">
-                                                <img src="zhuye/img/g5.jpg" alt="" class="tu">
-                                                <div class="zhe">
-                                                    <p>我的作品-小米</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="tab_img_first">
-                                        <div class="tab_img_first_nei">
-                                            <a href="" style="display: block;">
-                                                <img src="zhuye/img/g5.jpg" alt="" class="tu">
-                                                <div class="zhe">
-                                                    <p>我的作品-京东</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="tab_img_first">
-                                        <div class="tab_img_first_nei">
-                                            <a href="" style="display: block;">
-                                                <img src="zhuye/img/g5.jpg" alt="" class="tu">
-                                                <div class="zhe">
-                                                    <p>我的作品-天猫</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="tab_img_first">
-                                        <div class="tab_img_first_nei">
-                                            <a href="" style="display: block;">
-                                                <img src="zhuye/img/g5.jpg" alt="" class="tu">
-                                                <div class="zhe">
-                                                    <p>我的作品-移动</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="tab_img_first">
-                                        <div class="tab_img_first_nei">
-                                            <a href="" style="display: block;">
-                                                <img src="zhuye/img/g5.jpg" alt="" class="tu">
-                                                <div class="zhe">
-                                                    <p>我的作品-银泰</p>
-                                                </div>
+                                            <a href="yintai/inde.html" style="width:350px;height:
+                                             233px;position: absolute;">
+                                                <figcaption>
+                                                    <h2>
+                                                        <a href="">我的作品-银泰网</a>
+                                                    </h2>
+                                                    <div class="xian"></div>
+                                                    <p>Marley tried to convince her but she was not
+                                                        interested.</p>
+                                                </figcaption>
                                             </a>
                                         </div>
                                     </div>
@@ -500,9 +499,18 @@
                                         <div class="tab_img_first_nei">
                                             <a href="hunshua/index.html" style="display: block;">
                                                 <img src="zhuye/img/hun.jpg" alt="" class="tu">
-                                                <div class="zhe">
-                                                    <p>我的作品-婚纱</p>
-                                                </div>
+                                                <div class="zhe"></div>
+                                            </a>
+                                            <a href="hunshua/index.html" style="width:350px;height:
+                                             233px;position: absolute;">
+                                                <figcaption>
+                                                    <h2>
+                                                        <a href="">我的作品-婚纱网</a>
+                                                    </h2>
+                                                    <div class="xian"></div>
+                                                    <p>Marley tried to convince her but she was not
+                                                        interested.</p>
+                                                </figcaption>
                                             </a>
                                         </div>
                                     </div>
@@ -510,111 +518,155 @@
                                         <div class="tab_img_first_nei">
                                             <a href="shafa/index.html" style="display: block;">
                                                 <img src="zhuye/img/sa.jpg" alt="" class="tu">
-                                                <div class="zhe">
-                                                    <p>我的作品-沙发</p>
-                                                </div>
+                                                <div class="zhe"></div>
+                                            </a>
+                                            <a href="shafa/index.html" style="width:350px;height:
+                                             233px;position: absolute;">
+                                                <figcaption>
+                                                    <h2>
+                                                        <a href="">我的作品-沙发网</a>
+                                                    </h2>
+                                                    <div class="xian"></div>
+                                                    <p>Marley tried to convince her but she was not
+                                                        interested.</p>
+                                                </figcaption>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="tab_img_first">
                                         <div class="tab_img_first_nei">
-                                            <a href="" style="display: block;">
+                                            <a href="pinguo/index.html" style="display: block;">
                                                 <img src="zhuye/img/guo.jpg" alt="" class="tu">
-                                                <div class="zhe">
-                                                    <p>我的作品-苹果</p>
-                                                </div>
+                                                <div class="zhe"></div>
                                             </a>
-                                        </div>
-                                    </div>
-                                    <div class="tab_img_first">
-                                        <div class="tab_img_first_nei">
-                                            <a href="" style="display: block;">
-                                                <img src="zhuye/img/g5.jpg" alt="" class="tu">
-                                                <div class="zhe">
-                                                    <p>我的作品-天猫</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="tab_img_first">
-                                        <div class="tab_img_first_nei">
-                                            <a href="" style="display: block;">
-                                                <img src="zhuye/img/g5.jpg" alt="" class="tu">
-                                                <div class="zhe">
-                                                    <p>我的作品-移动</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="tab_img_first">
-                                        <div class="tab_img_first_nei">
-                                            <a href="" style="display: block;">
-                                                <img src="zhuye/img/g5.jpg" alt="" class="tu">
-                                                <div class="zhe">
-                                                    <p>我的作品-银泰</p>
-                                                </div>
+                                            <a href="pinguo/index.html" style="width:350px;height:
+                                             233px;position: absolute;">
+                                                <figcaption>
+                                                    <h2>
+                                                        <a href="">我的作品-苹果网</a>
+                                                    </h2>
+                                                    <div class="xian"></div>
+                                                    <p>Marley tried to convince her but she was not
+                                                        interested.</p>
+                                                </figcaption>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab_img"  id="tabs-4">
+                                <div class="tab_img" id="tabs-4">
                                     <div class="tab_img_first">
                                         <div class="tab_img_first_nei">
-                                            <a href="saolei/lei.html" style="display: block;">
-                                                <img src="zhuye/img/2.jpg" alt="" class="tu">
-                                                <div class="zhe">
-                                                    <p>扫雷游戏</p>
-                                                </div>
+                                            <a href="" style="display: block;">
+                                                <img src="zhuye/img/to.jpg" alt="" class="tu">
+                                                <div class="zhe"></div>
+                                            </a>
+                                            <a href="diandian/bianqian.html" style="width:350px;height:
+                                             233px;position: absolute;">
+                                                <figcaption>
+                                                    <h2>
+                                                        <a href="">我的作品-To do list</a>
+                                                    </h2>
+                                                    <div class="xian"></div>
+                                                    <p>Marley tried to convince her but she was not
+                                                        interested.</p>
+                                                </figcaption>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="tab_img_first">
                                         <div class="tab_img_first_nei">
                                             <a href="" style="display: block;">
-                                                <img src="zhuye/img/g5.jpg" alt="" class="tu">
-                                                <div class="zhe">
-                                                    <p>打字游戏</p>
-                                                </div>
+                                                <img src="zhuye/img/hua.jpg" alt="" class="tu">
+                                                <div class="zhe"></div>
+                                            </a>
+                                            <a href="huaban/huaban.html" style="width:350px;height:
+                                             233px;position: absolute;">
+                                                <figcaption>
+                                                    <h2>
+                                                        <a href="">我的作品-画板</a>
+                                                    </h2>
+                                                    <div class="xian"></div>
+                                                    <p>Marley tried to convince her but she was not
+                                                        interested.</p>
+                                                </figcaption>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tab_img_first">
+                                        <div class="tab_img_first_nei">
+                                            <a href="diandian/donghua.html" style="display: block;">
+                                                <img src="zhuye/img/3d.jpg" alt="" class="tu">
+                                                <div class="zhe"></div>
+                                            </a>
+                                            <a href="diandian/donghua.html" style="width:350px;height:
+                                             233px;position: absolute;">
+                                                <figcaption>
+                                                    <h2>
+                                                        <a href="">我的作品-3D空间</a>
+                                                    </h2>
+                                                    <div class="xian"></div>
+                                                    <p>Marley tried to convince her but she was not
+                                                        interested.</p>
+                                                </figcaption>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab_img" id="tabs-5">
+                                    <div class="tab_img_first">
+                                        <div class="tab_img_first_nei">
+                                            <a href="" style="display: block;">
+                                                <img src="zhuye/img/lei2.png" alt="" class="tu">
+                                                <div class="zhe"></div>
+                                            </a>
+                                            <a href="saolei/lei.html" style="width:350px;height:
+                                             233px;position: absolute;">
+                                                <figcaption>
+                                                    <h2>
+                                                        <a href="">我的作品-扫雷游戏</a>
+                                                    </h2>
+                                                    <div class="xian"></div>
+                                                    <p>Marley tried to convince her but she was not
+                                                        interested.</p>
+                                                </figcaption>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="tab_img_first">
                                         <div class="tab_img_first_nei">
                                             <a href="" style="display: block;">
-                                                <img src="zhuye/img/g5.jpg" alt="" class="tu">
-                                                <div class="zhe">
-                                                    <p>我的作品</p>
-                                                </div>
+                                                <img src="zhuye/img/dazi.jpg" alt="" class="tu">
+                                                <div class="zhe"></div>
+                                            </a>
+                                            <a href="daziyouxi/index.html" style="width:350px;height:
+                                             233px;position: absolute;">
+                                                <figcaption>
+                                                    <h2>
+                                                        <a href="">我的作品-打字游戏</a>
+                                                    </h2>
+                                                    <div class="xian"></div>
+                                                    <p>Marley tried to convince her but she was not
+                                                        interested.</p>
+                                                </figcaption>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="tab_img_first">
                                         <div class="tab_img_first_nei">
-                                            <a href="" style="display: block;">
-                                                <img src="zhuye/img/g5.jpg" alt="" class="tu">
-                                                <div class="zhe">
-                                                    <p>我的作品</p>
-                                                </div>
+                                            <a href="diandian/donghua.html" style="display: block;">
+                                                <img src="zhuye/img/dou.jpg" alt="" class="tu">
+                                                <div class="zhe"></div>
                                             </a>
-                                        </div>
-                                    </div>
-                                    <div class="tab_img_first">
-                                        <div class="tab_img_first_nei">
-                                            <a href="" style="display: block;">
-                                                <img src="zhuye/img/g5.jpg" alt="" class="tu">
-                                                <div class="zhe">
-                                                    <p>我的作品</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="tab_img_first">
-                                        <div class="tab_img_first_nei">
-                                            <a href="" style="display: block;">
-                                                <img src="zhuye/img/g5.jpg" alt="" class="tu">
-                                                <div class="zhe">
-                                                    <p>我的作品</p>
-                                                </div>
+                                            <a href="diandian/donghua.html" style="width:350px;height:
+                                             233px;position: absolute;">
+                                                <figcaption>
+                                                    <h2>
+                                                        <a href="">我的作品-闪烁的豆豆</a>
+                                                    </h2>
+                                                    <div class="xian"></div>
+                                                    <p>Marley tried to convince her but she was not
+                                                        interested.</p>
+                                                </figcaption>
                                             </a>
                                         </div>
                                     </div>
@@ -660,9 +712,9 @@
         </div>
     </div>
     <!--箭头-->
-        <div class="next">
-            <i class="iconfont ">&#xe647;</i>
-        </div>
+    <div class="next">
+        <i class="iconfont ">&#xe647;</i>
+    </div>
 </div>
 
 </body>

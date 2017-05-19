@@ -200,9 +200,9 @@
                 $(".flagnum").html("flag:"+num);
             }
             //阻止浏览器的默认行为
-//            $(document).on("contextmenu", function (e) {
-//                e.preventDefault();
-//            });
+           $(document).on("contextmenu", function (e) {
+                e.preventDefault();
+          });
 
         })
     </script>
@@ -232,8 +232,8 @@
         z-index:100;
     }
     .bj{
-        width:500px;
-        height:500px;
+        width:501px;
+        height:501px;
         margin: 0 auto;
         /*margin-top:60px;*/
         background: rgba(0,0,0,.8);

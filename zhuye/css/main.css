@@ -497,7 +497,7 @@ header{
     padding:30px 0 0 ;
     display: inline-block;
     width: 1170px;
-    padding: 30px 0 0;
+    padding: 60px 0 0;
     display: inline-block;
     position: absolute;
     z-index:1;
@@ -532,44 +532,106 @@ header{
     display: block;
     width: 100%;
     height:auto;
-    transition: transform 0.5s;
+    opacity:0.8;
+    /*transition: transform 0.5s;*/
     vertical-align: middle;
     backface-visibility: hidden;
 }
-/*.tu1{*/
-    /*width:100%;*/
-    /*height:233px;*/
-    /*display: block;*/
-    /*background: url(../img/大白.jpg) no-repeat;*/
-    /*background-size: cover;*/
-    /*transition: transform 0.5s;*/
-
-    /*background-size:cover;*/
-/*}*/
 .zhe{
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,.7);
     position: absolute;
-    top: auto;
-    bottom:0;
-    width: 100%;
-    height: 49px;
-    background:#000;
-    overflow: hidden;
-    transition: transform 0.35s;
-    transform: translate3d(0,100%,0);
+    top:0;
+    left:0;
 }
-.tab_img_first_nei:hover .zhe{
-    transform: translate3d(0,0,0);
-}
-.tab_img_first_nei:hover .tu{
-    transform: translate3d(0,-50px,0);
-}
-.zhe p{
-    padding: 13px 30px;
-    font-size: 16px;
+figcaption{
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    text-align: right;
     color: #fff;
+    text-transform: uppercase;
+    font-size: 24px;
+    cursor: pointer;
+}
+figcaption h2{
+    position: absolute;
+    top:-12px;
+    right: 30px;
+    left: 30px;
+    padding: 10px 0;
+    transition: transform 0.35s;
+    transform: translate3d(0,20px,0);
+}
+.xian{
+    opacity:0;
+    position: absolute;
+    top: 71px;
+    right:27px;
+    width: 290px;
+    height: 4px;
+    background: #fff;
+    content: '';
+    transition:opacity 0.35s,transform 0.3s;
+    transform: translate3d(0,40px,0);
+}
+
+figcaption h2 a{
+   color:#fff;
+    font-size:18px;
+}
+figcaption p{
+    position: absolute;
+    right: 30px;
+    left: 30px;
+    bottom:30px;
+    padding: 10px 0;
+    opacity:0;
+    transition: opacity 0.35s, transform 0.35s;
+    line-height: 20px;
     letter-spacing: 1px;
     z-index:100;
+    color:#fff;
+    font-size: 12px;
 }
+figcaption:hover h2{
+    transform: translate3d(0,0,0);
+}
+figcaption:hover p{
+    opacity:1;
+    transform: translate3d(0,0,0);
+}
+figcaption:hover .xian{
+    opacity:1;
+    transform: translate3d(0,0,0);
+}
+/*.zhe{*/
+    /*position: absolute;*/
+    /*top: auto;*/
+    /*bottom:0;*/
+    /*width: 100%;*/
+    /*height: 49px;*/
+    /*background:#000;*/
+    /*overflow: hidden;*/
+    /*transition: transform 0.35s;*/
+    /*transform: translate3d(0,100%,0);*/
+/*}*/
+/*.tab_img_first_nei:hover .zhe{*/
+    /*transform: translate3d(0,0,0);*/
+/*}*/
+/*.tab_img_first_nei:hover .tu{*/
+    /*transform: translate3d(0,-50px,0);*/
+/*}*/
+/*.zhe p{*/
+    /*padding: 13px 30px;*/
+    /*font-size: 16px;*/
+    /*color: #fff;*/
+    /*letter-spacing: 1px;*/
+    /*z-index:100;*/
+/*}*/
 .zuihou{
     padding: 55px 0px;
     text-align: center;

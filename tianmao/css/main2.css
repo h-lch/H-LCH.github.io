@@ -35,7 +35,7 @@ nav{
 	left: 0;
 	right: 0;
 	background-color: #DD2727;
-	opacity: 0.95px;
+	opacity: 0.95;
 	z-index: 1000;
 }
 .navbox{
@@ -94,7 +94,7 @@ nav{
 	width: 740px;
 	height: 30px;
 	position: relative;
-	background-size: blue;
+	/*background-size: blue;*/
 }
 .searchkk{
     color: #000;
@@ -319,7 +319,7 @@ header{
 	width: 122px;
 	position: absolute;
 	top: 30px;
-	right:-12;
+	right:-12px;
 	left:0;
 	overflow: hidden;
 	background: #fff;
@@ -1260,7 +1260,7 @@ header{
 	display: block;
 	float: left;
 	width: 167px;
-	hei`ght: 87px; 
+	height: 87px;
 }
 .bannertu{
 	height: 500px;
@@ -1884,7 +1884,7 @@ h3{
 	right: 0;
 	border-radius: 70px;
 	background: #f7f7f7;
-	opacity: 0.3px;
+	opacity: 0.3;
 	z-index: 20;
 	cursor: pointer;
 }
@@ -2123,6 +2123,7 @@ h3{
     position: absolute;
     top: 65px;
     left: 90px;
+	transition-duration:0.3s;
 }
 .tutu:hover{
 	transform:translateX(-20px);
@@ -2377,8 +2378,6 @@ h3{
 .didi-di{
 	font-size: 10px;
 	color: #a4a4a4;
-	padding-top:;
-
 }
 
 

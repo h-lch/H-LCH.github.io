@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <title>图片动画</title>
     <style>
-
+        section{
+            width:1000px;
+            margin:0 auto;
+        }
         canvas{
             background:#000;
         }
     </style>
 </head>
 <body>
-    <canvas width="500" height="500"></canvas>
+<section>
+    <canvas width="1000" height="600"></canvas>
+</section>
     <script>
     window.onload=function () {
         let canvas = document.querySelector("canvas");
@@ -55,7 +60,7 @@
 
         let arr = [];
         let t = setInterval(function () {//让他动起来，给一个事件函数
-            cobj.clearRect(0, 0, 500, 500);
+            cobj.clearRect(0, 0, 1000, 600);
             let liziobj = new lizi(canvas, cobj,x,y);//初始化一个新的对象
             arr.push(liziobj);
             for (let i = 0; i < arr.length; i++) {

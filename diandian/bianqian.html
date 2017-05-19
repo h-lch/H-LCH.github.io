@@ -21,9 +21,11 @@
         .title {
             width: 100%;
             height: 100%;
-            background: #0ff;
+            color:#000;
+            text-align: center;
+            background: #ccc;
             line-height: 100px;
-            font-size: 20px;
+            font-size: 28px;
             font-weight: bold;
             padding-left: 30px;
         }
@@ -36,35 +38,38 @@
         #text {
             width: 300px;
             height: 50px;
-            float: left;
+            border-color: pink;
+            float: right;
         }
 
         #submit {
             width: 150px;
             height: 50px;
-            float: left;
-            background: pink;
+            float: right;
+            color: #fff;
+            background:pink;
             border: none;
             cursor: pointer;
         }
 
         .show {
             width: 100%;
-            background: firebrick;
+            background: #ff4f93;
             flex-grow:1;
         }
         .plan{
             width:50%;
             height:80%;
             overflow: auto;
-            background: orange;
+            background: #7baeff;
             float: left;
         }
         .done{
             width:50%;
             height:80%;
             overflow: auto;
-            background: #963;
+            color: #666;
+            background: #ff80be;
             float: right;
         }
         ul{
@@ -96,7 +101,7 @@
             float: right;
             width:190px;
             height:30px;
-            background: #63a35c;
+            background: #ff5d9b;
             text-align: center;
             line-height:30px;
             color: #fff;
@@ -110,21 +115,38 @@
             font-weight: bold;
             color:#fff;
             line-height:30px;
-            background: dodgerblue;
+            background: powderblue;
+        }
+        @font-face {
+            font-family: 'iconfont';
+            src: url('font/iconfont.eot');
+            src: url('font/iconfont.eot?#iefix') format('embedded-opentype'),
+            url('font/iconfont.woff') format('woff'),
+            url('font/iconfont.ttf') format('truetype'),
+            url('font/iconfont.svg#iconfont') format('svg');
+        }
+        .iconfont{
+            font-family:"iconfont" !important;
+            font-size:16px;font-style:normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
         }
     </style>
 </head>
 <body>
     <div class="title">TO　DO　LIST</div>
     <div class="inputarea">
-        <input type="text" id="text">
         <input   type="button" id="submit" value="提交">
+        <input type="text" id="text">
     </div>
     <div class="show">
         <div class="contenttitle">未完成</div>
         <div class="contenttitle">己完成</div>
         <ul class="plan">
-            <li><input type="checkbox"><span contenteditable="true">sfalkjk</span><time>2017-5-3 15:23</time></li>
+            <li><input type="checkbox" value="x"><span contenteditable="true" value="x">sfalkjk
+            </span><time>2017-5-3
+                15:23</time></li>
         </ul>
         <ul class="done">
             <li><input type="checkbox"><span contenteditable="true">sfalkjk</span><time>2017-5-3 15:23</time></li>
