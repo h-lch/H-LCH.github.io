@@ -14,6 +14,7 @@ $li.each(function(i){
 	iY = parseInt(i/6);
 	this.x = iX;
 	this.y = iY;
+	console.log(iX,iY);
 	$(this).css({
 		'position':'absolute',
 		'left':iX*liWidth,
